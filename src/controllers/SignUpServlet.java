@@ -12,12 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import enums.UserRole;
-import model.Customer;
-import model.User;
-import model.Deliverer;
 import model.Administrator;
-
-import utilities.FileHandler;
+import model.User;
 
 /**
  * Servlet implementation class SignUpServlet
@@ -56,18 +52,12 @@ public class SignUpServlet extends HttpServlet {
 		String selectedRole = request.getParameter("userRole");
 		switch(selectedRole)
 		{
-		case "CUSTOMER": 
-			newUserRole = UserRole.CUSTOMER;
-			newUser = new Customer();
-			break;
+		
 		case "ADMINISTRATOR":
 			newUserRole = UserRole.ADMINISTRATOR;
 			newUser = new Administrator();
 			break;
-		case "DELIVERY":
-			newUserRole = UserRole.DELIVERY;
-			newUser = new Deliverer();
-			break;		
+		
 		default:
 			System.out.println("SignUp failed, some user data not valid!");
 			userCreatedMessage = "Wrong User Role.";

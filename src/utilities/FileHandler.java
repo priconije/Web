@@ -12,13 +12,11 @@ import java.util.List;
 
 import enums.UserRole;
 import model.Administrator;
-import model.Customer;
-import model.Deliverer;
 import model.User;
 
 public final class FileHandler {
 	
-	public static final String savedDataFolderPath = "C:/Users/Ognjen/Desktop/Web2018/OP2018/WebContent/SavedData";
+	public static final String savedDataFolderPath = "C:\\Users\\Ognjen\\Documents\\EclipseWorkspace\\WebProjekat\\Web\\WebContent\\SavedData";
 
 	private FileHandler () { }
 	
@@ -28,8 +26,8 @@ public final class FileHandler {
 		{
 			Writer output;
 			output = new BufferedWriter(new FileWriter(savedDataFolderPath + "/" + "Users.txt", true));
-			output.append(newUser.toString());
 			output.append(System.lineSeparator());
+			output.append(newUser.toString());			
 			output.close();
 		} 
 		catch (IOException e) 
@@ -46,7 +44,7 @@ public final class FileHandler {
 		try
 		{
 			ArrayList<User> users = new ArrayList<User>();
-			BufferedReader reader = new BufferedReader(new FileReader(savedDataFolderPath+ "/" + "Users.txt"));
+			BufferedReader reader = new BufferedReader(new FileReader(savedDataFolderPath+ "\\" + "Users.txt"));
 			String line;
 			User user;
 			
@@ -62,15 +60,7 @@ public final class FileHandler {
 					case ADMINISTRATOR:
 						user = new Administrator();
 						break;
-						
-					case CUSTOMER:
-						user = new Customer();
-						break;
-						
-					case DELIVERY:
-						user = new Deliverer();
-						break;
-					
+								
 					default:
 						System.out.println("User Role unknown.");
 						return null;
