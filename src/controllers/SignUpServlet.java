@@ -70,6 +70,7 @@ public class SignUpServlet extends HttpServlet {
 		newUser.setLastName(request.getParameter("lastName"));
 		newUser.setPhoneNumber(request.getParameter("phone"));
 		newUser.setEmail(request.getParameter("email"));
+		newUser.setCity(request.getParameter("city"));
 		newUser.setUserRole(newUserRole);
 		newUser.setRegistrationDate(DateFormat.getDateTimeInstance().format(currentDate));
 		

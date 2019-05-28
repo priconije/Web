@@ -16,8 +16,8 @@ import model.User;
 
 public final class FileHandler {
 	
-	public static final String savedDataFolderPath = "C:\\Users\\Ognjen\\Documents\\EclipseWorkspace\\WebProjekat\\Web\\WebContent\\SavedData";
-
+	//public static final String savedDataFolderPath = "C:\\Users\\Ognjen\\Documents\\EclipseWorkspace\\WebProjekat\\Web\\WebContent\\SavedData";
+	public static final String savedDataFolderPath =  "C:\\Grujica\\Web\\WebContent\\SavedData";
 	private FileHandler () { }
 	
 	public static boolean WriteNewUserToFile(User newUser)
@@ -74,6 +74,7 @@ public final class FileHandler {
 					user.setEmail(lineParts[6]);
 					user.setUserRole(role);
 					user.setRegistrationDate(lineParts[7]);
+					user.setCity(lineParts[8]);
 					
 					users.add(user);
 				}

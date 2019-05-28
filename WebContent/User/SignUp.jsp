@@ -44,6 +44,11 @@
 			</div>
 			
 			<div class="form-group">
+				<label class="col-form-label" for="inputDefault">City</label>
+				<input type="text" class="form-control" name="city">
+			</div>
+			
+			<div class="form-group">
 			  <label for="exampleSelect1">User Role</label>
 			  <select class="form-control" name="userRole">
 				<c:forEach var="role" items="${userRoleEnum}" >

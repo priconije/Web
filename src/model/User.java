@@ -11,10 +11,11 @@ public abstract class User {
 	private String phoneNumber;
 	private String email;
 	private String registrationDate;
+	private String city;
 	
 	public User() {}
 	public User(String username, String password, String firstName, String lastName, UserRole userRole,
-			String phoneNumber, String email, String registrationDate) {
+			String phoneNumber, String email, String registrationDate, String city) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -24,8 +25,17 @@ public abstract class User {
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.registrationDate = registrationDate;
+		this.city = city;
 	}
-
+	
+	public String getCity() {
+		return city;
+	}
+	
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -92,7 +102,7 @@ public abstract class User {
 
 	@Override
 	public String toString() {
-		return username + ";" + password + ";" + firstName + ";" + lastName + ";" + userRole + ";" + phoneNumber + ";" + email + ";" + registrationDate + ";";
+		return username + ";" + password + ";" + firstName + ";" + lastName + ";" + userRole + ";" + phoneNumber + ";" + email + ";" + registrationDate + ";" + city + ";";
 	}
 }
 
