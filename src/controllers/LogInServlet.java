@@ -50,5 +50,4 @@ public class LogInServlet extends HttpServlet {
 			return;
 		}
 	}
-
 }

@@ -1,5 +1,5 @@
 package enums;
 
 public enum UserRole {
-	ADMINISTRATOR
+	ADMINISTRATOR, CUSTOMER, SALESMAN
 }

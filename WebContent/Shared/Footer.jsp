@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen.css">
 </head>
 <body>
-	<footer class="modal-footer card-footer">
+	<footer class="modal-footer card-footer" style="position:relative; clear: both;">
 		<p>Created by: Ognjen Prica; Contact information: <a href="mailto:priconije@gmail.com">priconije@gmail.com</a>.</p>
 	</footer>
 </body>

@@ -9,7 +9,8 @@
 </head>
 <body>
 	 <jsp:include page="Shared/Header.jsp" />
-	 Home page
+	 Username: ${sessionScope.loggedInUser.getUsername()}
+	 Role: ${sessionScope.loggedInUser.getUserRole()}
 	 <jsp:include page="Shared/Footer.jsp" />
 </body>
 </html>
