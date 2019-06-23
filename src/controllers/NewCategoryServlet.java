@@ -39,8 +39,8 @@ public class NewCategoryServlet extends HttpServlet {
 		category.setCategoryName(request.getParameter("categoryName"));
 		category.setDescriotion(request.getParameter("description"));
 		
-		System.out.println(category.getCategoryName());	
-		System.out.println(category.getDescriotion());	
+		System.out.println(category.getCategoryName());
+		System.out.println(category.getDescriotion());
 	}
 
 }

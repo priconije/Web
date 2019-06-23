@@ -53,7 +53,6 @@ public class Item {
 	
 	@Override
 	public String toString() {
-		// TODO Implement Item toString
-		return super.toString();
+		return name + ";" + price + ";" + quantity + ";" + description;
 	}
 }
