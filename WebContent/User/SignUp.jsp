@@ -9,7 +9,9 @@
 <title>Create new account</title>
 </head>
 <body>
+<div style="position: relative;  min-height: 100vh;">
 	<jsp:include page="../Shared/Header.jsp" />
+	
 	<form class="form-control" style="max-width: 40%; margin: auto; margin-top: 2rem" action="${pageContext.request.contextPath}/SignUp" method="post">		
 		<fieldset>
 			<legend>Please fill the fields below to sign up</legend>
@@ -64,5 +66,6 @@
 </form>
 	
 	<jsp:include page="../Shared/Footer.jsp" />
+	</div>
 </body>
 </html>

@@ -8,9 +8,11 @@
 <title>Foody - Food delivery</title>
 </head>
 <body>
-	 <jsp:include page="Shared/Header.jsp" />
-	 Username: ${sessionScope.loggedInUser.getUsername()}
-	 Role: ${sessionScope.loggedInUser.getUserRole()}
-	 <jsp:include page="Shared/Footer.jsp" />
+	<div style="position: relative;  min-height: 100vh;">
+		<jsp:include page="Shared/Header.jsp"/>
+		Username: ${sessionScope.loggedInUser.getUsername()}
+		Role: ${sessionScope.loggedInUser.getUserRole()}
+		<jsp:include page="Shared/Footer.jsp" />
+	<div>
 </body>
 </html>
