@@ -83,7 +83,7 @@ public class SignUpServlet extends HttpServlet {
 		{
 			userCreatedMessage = "User not created";
 		}
-		request.getSession().setAttribute("userCreatedMessage", userCreatedMessage);				
+		request.getSession(false).setAttribute("userCreatedMessage", userCreatedMessage);				
 		RequestDispatcher dispatcher = request.getRequestDispatcher("User/SignUp.jsp");
 		dispatcher.forward(request, response);
 		return;

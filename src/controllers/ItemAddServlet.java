@@ -45,7 +45,6 @@ public class ItemAddServlet extends HttpServlet {
 			price = Double.parseDouble(request.getParameter("itemPrice"));
 			quantity = Integer.parseInt(request.getParameter("itemQuantity"));
 		}catch (Exception e){
-			//TODO: Error on these fields
 			System.out.println("Item price or quantity invalid: " + e.getMessage());
 			return;
 		}
@@ -64,9 +63,8 @@ public class ItemAddServlet extends HttpServlet {
 		}
 		else
 		{
-			
+			System.out.println("Item added: " + item.toString());					
 		}
-			System.out.println("Item added: " + item.toString());		
 	}
 	
 

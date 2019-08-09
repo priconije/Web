@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.User;
 import utilities.LogInService;
@@ -30,21 +31,27 @@ public class LogInServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getSession().removeAttribute("loggedInUser");
+		HttpSession session = request.getSession(false);
+		if(session == null)
+		{
+			return;
+		}
+		
+		session.removeAttribute("loggedInUser");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		User user = LogInService.ValidateUserOnLogIn(username, password);
 		
 		if(user != null)
 		{
-			request.getSession().setAttribute("loggedInUser", user);
+			session.setAttribute("loggedInUser", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}
 		else
 		{
-			request.getSession().setAttribute("logInError", "Username or Password incorrect. Please try again...");
+			session.setAttribute("logInError", "Username or Password incorrect. Please try again...");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("User/LogIn.jsp");			
 			dispatcher.forward(request, response);
 			return;

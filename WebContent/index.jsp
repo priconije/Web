@@ -5,14 +5,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-lumen.css">
-<title>Foody - Food delivery</title>
+<title>IdiMiDodjiMiKupiMi</title>
 </head>
 <body>
 	<div style="position: relative;  min-height: 100vh;">
 		<jsp:include page="Shared/Header.jsp"/>
-		Username: ${sessionScope.loggedInUser.getUsername()}
-		Role: ${sessionScope.loggedInUser.getUserRole()}
+		
 		<jsp:include page="Shared/Footer.jsp" />
-	<div>
+	</div>
 </body>
 </html>

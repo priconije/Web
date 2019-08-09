@@ -17,10 +17,10 @@ import model.User;
 
 public final class FileHandler {
 
-	public static final String savedDataFolderPath = "C:\\Users\\Ognjen\\Documents\\EclipseWorkspace\\WebProjekat\\Web\\WebContent\\SavedData";
-
-	// public static final String savedDataFolderPath =
-	// "C:\\Grujica\\Web\\WebContent\\SavedData";
+	//public static final String savedDataFolderPath = "C:\\Users\\Ognjen\\Documents\\EclipseWorkspace\\WebProjekat\\Web\\WebContent\\SavedData";
+	public static final String savedDataFolderPath = "C:\\Web\\Web\\WebContent\\SavedData";
+	// public static final String savedDataFolderPath = "C:\\Grujica\\Web\\WebContent\\SavedData";
+	
 	private FileHandler() {
 	}
 
