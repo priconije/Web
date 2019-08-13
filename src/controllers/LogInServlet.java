@@ -38,23 +38,35 @@ public class LogInServlet extends HttpServlet {
 		}
 		
 		session.removeAttribute("loggedInUser");
+		session.setAttribute("logInError", "");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		User user = LogInService.ValidateUserOnLogIn(username, password);
 		
-		if(user != null)
+		if(username != null && password != null && !username.isEmpty() && !password.isEmpty())
 		{
-			session.setAttribute("loggedInUser", user);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-			dispatcher.forward(request, response);
-			return;
+			User user = LogInService.ValidateUserOnLogIn(username, password);
+			
+			if(user != null)
+			{
+				session.setAttribute("loggedInUser", user);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+				dispatcher.forward(request, response);
+				return;
+			}
+			else
+			{
+				session.setAttribute("logInError", "Username or Password incorrect. Please try again...");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("User/LogIn.jsp");			
+				dispatcher.forward(request, response);
+				return;
+			}
 		}
-		else
-		{
-			session.setAttribute("logInError", "Username or Password incorrect. Please try again...");
+		else {
+			session.setAttribute("logInError", "Username and Password fields cannot be empty.");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("User/LogIn.jsp");			
 			dispatcher.forward(request, response);
 			return;
 		}
+		
 	}
 }
