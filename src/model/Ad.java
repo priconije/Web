@@ -1,9 +1,11 @@
 package model;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class Ad {
 
+	private UUID adID;
 	private String title;
 	private Item item;
 	private String description;
@@ -22,6 +24,7 @@ public class Ad {
 		this.postedOn = new Date();
 		this.isActive = true;
 		this.city = "";
+		adID = UUID.randomUUID();
 	}
 
 	public String getTitle() {
@@ -80,9 +83,13 @@ public class Ad {
 		this.item = item;
 	}
 
+	public UUID getAdID() {
+		return adID;
+	}
+
 	@Override
 	public String toString() {
-		// TODO Implement Ad toString
-		return super.toString();
+		
+		return adID + ";" + title + ";" + item.getItemID().toString();
 	}
 }

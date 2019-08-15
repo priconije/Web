@@ -1,14 +1,18 @@
 package model;
 
+import java.util.UUID;
+
 public class Item {
 
 	private String name;
 	private double price;
 	private String description;
 	private int quantity;
+	private UUID itemID;
 	//image
 	
 	public Item() {
+		this.itemID = UUID.randomUUID();
 	}
 	
 	public Item(String name, double price) {
@@ -17,6 +21,15 @@ public class Item {
 		this.price = price;
 		this.quantity = 1;
 		this.description = "";
+		this.itemID = UUID.randomUUID();
+	}
+
+	public UUID getItemID() {
+		return itemID;
+	}
+
+	public void setItemID(UUID itemID) {
+		this.itemID = itemID;
 	}
 
 	public String getName() {
@@ -53,6 +66,6 @@ public class Item {
 	
 	@Override
 	public String toString() {
-		return name + ";" + price + ";" + quantity + ";" + description;
+		return getItemID().toString() + ";" + name + ";" + price + ";" + quantity + ";" + description;
 	}
 }

@@ -4,19 +4,13 @@
 <html>
 	<head>
 		<title>Add new item</title>
-		
-		<script src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
-	    <script src="${pageContext.request.contextPath}/js/pooper-1.14.7.min.js"></script>
-	    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-lumen.css">
-		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	</head>
 	
 	<body>
 		<jsp:include page="../Shared/Header.jsp" />
-		<form class="form-control" style="max-width: 40%; margin: auto; margin-top: 2rem" action="${pageContext.request.contextPath}/ItemAdd" method="post">		
+		<form style="max-width: 40%; margin: auto; margin-top: 2rem" action="${pageContext.request.contextPath}/ItemAdd" method="post">		
 			<fieldset>
-				<legend>Please fill the fields below to add new item</legend>
+				<legend>New Item</legend>
 				
 				<div class="form-group">
 					<label class="col-form-label" for="inputDefault">Item name</label>
@@ -33,12 +27,17 @@
 					<input type="text" class="form-control" name="itemQuantity">
 				</div>
 				
+<!-- 				<div class="form-group"> -->
+<!-- 					<label class="col-form-label" for="inputDefault">Description</label> -->
+<!-- 					<input type="text" class="form-control" name="itemDescription"> -->
+<!-- 				</div> -->
+				
 				<div class="form-group">
-					<label class="col-form-label" for="inputDefault">Description</label>
-					<input type="text" class="form-control" name="itemDescription">
+					<label for="exampleTextarea">Description</label>
+					<textarea name="itemDescription" class="form-control" id="exampleTextarea" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 106px;"></textarea>
 				</div>
 							
-				  <button type="submit"  class="btn btn-primary">Add</button>
+				<button type="submit"  class="btn btn-primary">Add</button>
 			</fieldset>
 		</form>		
 	</body>

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import enums.UserRole;
 import model.Administrator;
@@ -110,10 +111,11 @@ public final class FileHandler {
 				while ((line = reader.readLine()) != null) {
 					String[] lineParts = line.split(";");
 					Item item = new Item();
-					item.setName(lineParts[0]);
-					item.setPrice(Double.parseDouble(lineParts[1]));
-					item.setQuantity(Integer.parseInt(lineParts[2]));
-					item.setDescription(lineParts[3]);
+					item.setItemID(UUID.fromString(lineParts[0]));
+					item.setName(lineParts[1]);
+					item.setPrice(Double.parseDouble(lineParts[2]));
+					item.setQuantity(Integer.parseInt(lineParts[3]));
+					item.setDescription(lineParts[4]);
 
 					items.add(item);
 				}

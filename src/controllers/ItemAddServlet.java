@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -59,12 +60,16 @@ public class ItemAddServlet extends HttpServlet {
 		if(FileHandler.WriteNewItemToFile(item) == false)
 		{
 			System.out.println("Failed to add new item to file: " + item.getName());
-			return;
 		}
 		else
 		{
-			System.out.println("Item added: " + item.toString());					
+			System.out.println("Item added: " + item.toString());	
 		}
+		
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("/Ads/ItemNew.jsp");
+//		dispatcher.forward(request, response);
+		response.sendRedirect("Ads/ItemNew.jsp");
+		return;
 	}
 	
 

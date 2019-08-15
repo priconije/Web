@@ -1,0 +1,6 @@
+8b2122c3-ce6b-4e9a-be71-b6ce304e7fbb;fdsfd;23.0;1212;df dfsdf dsf
+dfef66f6-ef63-4bdf-a64b-0c49dd4fb8fe;Item1;123.0;5;Description 1
+d7a121b6-deba-4a34-b9cf-b0d6ff6748fd;Item2;1234.0;10;Description for item 2
+7a85bdaa-fdc6-43ac-b806-26abf39fcb5b;Item 3;55.0;12;Description for item 3
+f2cc7d1d-5b28-4b62-a9b5-0ee217e6781f;Item 3;55.0;12;Description for item 3
+a9480d1a-be50-4acf-960b-981eb09a122e;Item;123.0;123;dsdsad sda
