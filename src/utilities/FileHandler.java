@@ -104,7 +104,7 @@ public final class FileHandler {
 	public static List<Item> GetAllItems() {
 		try {
 			List<Item> items = new ArrayList<Item>();
-			BufferedReader reader = new BufferedReader(new FileReader(savedDataFolderPath + "\\" + "Users.txt"));
+			BufferedReader reader = new BufferedReader(new FileReader(savedDataFolderPath + "\\" + "Items.txt"));
 			String line;
 
 			try {
@@ -122,7 +122,8 @@ public final class FileHandler {
 				reader.close();
 				return items;
 			} catch (Exception e) {
-				System.out.println("Error while reading a line from Items.txt");
+				System.out.println("Error while reading a line from Items.txt: ");
+				System.out.println(e);
 				return null;
 			}
 

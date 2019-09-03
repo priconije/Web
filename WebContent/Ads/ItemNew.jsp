@@ -34,7 +34,7 @@
 				
 				<div class="form-group">
 					<label for="exampleTextarea">Description</label>
-					<textarea name="itemDescription" class="form-control" id="exampleTextarea" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 106px;"></textarea>
+					<textarea name="itemDescription" class="form-control" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 106px;"></textarea>
 				</div>
 							
 				<button type="submit"  class="btn btn-primary">Add</button>

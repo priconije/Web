@@ -1,3 +1,3 @@
-function test(){
+$(document).ready(function test(){
 	alert("Hello!");	
-}
+});

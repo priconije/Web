@@ -39,7 +39,7 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Items</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="${pageContext.request.contextPath}/Ads/Items.jsp">All Items</a>
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/AllItems">All Items</a>
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/Ads/ItemNew.jsp">New Item</a>
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/Ads/ItemEdit.jsp">Edit Items</a>
 						</div>
