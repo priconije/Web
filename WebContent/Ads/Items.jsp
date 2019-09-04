@@ -15,30 +15,35 @@
 		<h2 style="padding:20px">Items</h2>
 		
 		<div style="width: 50%; height:50%; padding:20px;" id="allItemsTable">
-			<table class="table table-hover table-striped">
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Price</th>
-						<th scope="col">Quantity</th>
-						<th scope="col">Description</th>
-						
-						<th scope="col"><a href="${pageContext.request.contextPath}/AllItems" class="btn btn-secondary">Reload All</a></th>
-					</tr>
-				</thead>
-								
-				<tbody>
-					<c:forEach items="${sessionScope.allItemsList}" var="item">
+			<form action="${pageContext.request.contextPath}/ItemEdit" method="post">
+				<table class="table table-hover table-striped">
+					<thead>
 						<tr>
-							<td>${item.getName()}</td>
-							<td>${item.getPrice()}</td>
-							<td>${item.getQuantity()}</td>
-							<td>${item.getDescription()}</td>
-							<td><button type="button" class="btn btn-secondary" data-dismiss="modal" >Edit Item</button></td>
+							<th scope="col">Name</th>
+							<th scope="col">Price</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Description</th>
+							
+							<th scope="col"><a href="${pageContext.request.contextPath}/AllItems" class="btn btn-secondary">Reload All</a></th>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>				
+					</thead>
+									
+					<tbody>
+						<c:forEach items="${sessionScope.allItemsList}" var="item">
+							<tr>
+								<td>${item.getName()}</td>
+								<td>${item.getPrice()}</td>
+								<td>${item.getQuantity()}</td>
+								<td>${item.getDescription()}</td>
+								<td>
+									<a class="btn btn-primary" href="${pageContext.request.contextPath}/ItemEdit?itemID=${item.getItemID()}">Edit</a>
+									<button type="submit" name="delete" class="btn btn-danger" value="${item.getItemID()}">Delete</button>
+								</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</form>				
 		</div>
 	</body>
 </html>

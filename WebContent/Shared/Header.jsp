@@ -41,7 +41,6 @@
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/AllItems">All Items</a>
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/Ads/ItemNew.jsp">New Item</a>
-							<a class="dropdown-item" href="${pageContext.request.contextPath}/Ads/ItemEdit.jsp">Edit Items</a>
 						</div>
 					</li>
 	<!-- 				<li class="nav-item"> -->
