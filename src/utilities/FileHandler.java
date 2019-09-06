@@ -2,6 +2,7 @@ package utilities;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -38,6 +39,41 @@ public final class FileHandler {
 		}
 
 		return true;
+	}
+	
+	public static boolean DeleteUserFromFile(String userID)
+	{
+		File inputFile = new File(savedDataFolderPath + "\\" + "Users.txt");
+		File outputFile = new File(savedDataFolderPath + "\\" + "Users_temp.txt");
+		
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
+			
+			String currentLine;
+			
+			while((currentLine = reader.readLine()) != null)
+			{
+				if(currentLine.split(";")[0] == userID)
+				{
+					continue;
+				}
+				writer.write(currentLine + System.lineSeparator());
+			}
+			
+			writer.close();
+			reader.close();
+			
+			return outputFile.renameTo(inputFile);
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("Deleting user from file failed.");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Deleting user from file failed.");
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 	public static List<User> GetAllUsers() {
